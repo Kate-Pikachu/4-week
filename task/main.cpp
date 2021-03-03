@@ -17,7 +17,7 @@ int main() {
 
 	std::cout << "	2) add some numbers in P1" << std::endl;
 	P1.push_back(11);
-	P1.push_back(12);
+	P1.push_back(9);
 	show_sequence(P1);
 	std::cout << std::endl;
 
@@ -25,6 +25,12 @@ int main() {
 	std::random_device rd;
 	std::mt19937 mersenne(rd());
 	std::shuffle(std::begin(P1), std::end(P1), mersenne);
+	show_sequence(P1);
+	std::cout << std::endl;
+
+	std::cout << "	4) delete duplicates in P1" << std::endl;
+	std::sort(P1.begin(), P1.end());
+	P1.erase(std::unique(P1.begin(), P1.end()), P1.end());
 	show_sequence(P1);
 	std::cout << std::endl;
 
