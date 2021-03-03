@@ -8,6 +8,18 @@ void show_sequence(std::vector<int> vec) {
 		std::cout << element << ' ';
 }
 
+auto isPrime(int n) {
+	
+	if (n == 1)
+		return 0;
+	for (auto k = 2; k < n; ++k) {
+		if (n % k == 0)
+			return 0;
+		else
+			return 1;
+	}
+}
+
 int main() {
 
 	std::cout << "	1) create a sequence P1" << std::endl;
@@ -29,18 +41,27 @@ int main() {
 	std::cout << std::endl;
 
 	std::cout << "	4) delete duplicates in P1" << std::endl;
-	std::sort(P1.begin(), P1.end());
-	P1.erase(std::unique(P1.begin(), P1.end()), P1.end());
+	std::sort(std::begin(P1), std::end(P1));
+	P1.erase(std::unique(std::begin(P1), std::end(P1)), std::end(P1));
 	show_sequence(P1);
 	std::cout << std::endl;
 
 	std::cout << "	5) count odd numbers in P1" << std::endl;
-	std::cout << std::count_if(P1.begin(), P1.end(), [](int n) {return n % 2 != 0; })
+	std::cout << std::count_if(std::begin(P1), std::end(P1), [](int n) {return n % 2 != 0; })
 		<< " numbers " << std::endl;
 
 	std::cout << "	6) define max and min numbers in P1" << std::endl;
-	std::cout << "Max: " << *std::max_element(P1.begin(), P1.end()) << std::endl;
-	std::cout << "Min: " << *std::min_element(P1.begin(), P1.end()) << std::endl;
+	std::cout << "Max: " << *std::max_element(std::begin(P1), std::end(P1)) << std::endl;
+	std::cout << "Min: " << *std::min_element(std::begin(P1), std::end(P1)) << std::endl;
+
+	std::cout << "	7) define prime numbers in P1" << std::endl;
+	auto x = std::find_if(std::begin(P1), std::end(P1), [](auto n) {return isPrime(n); });
+	if (x == std::end(P1))
+		std::cout << "No prime numbers " << std::endl;
+	else 
+		std::cout << *x << " numbers" << std::endl;
+
+
 
 
 
