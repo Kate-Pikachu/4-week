@@ -34,6 +34,10 @@ int main() {
 	show_sequence(P1);
 	std::cout << std::endl;
 
+	std::cout << "	5) count odd numbers in P1" << std::endl;
+	std::cout << std::count_if(P1.begin(), P1.end(), [](int n) {return n % 2 != 0; })
+		<< " numbers " << std::endl;
+	std::cout << std::endl;
 
 
 
