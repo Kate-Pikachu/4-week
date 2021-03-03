@@ -37,8 +37,10 @@ int main() {
 	std::cout << "	5) count odd numbers in P1" << std::endl;
 	std::cout << std::count_if(P1.begin(), P1.end(), [](int n) {return n % 2 != 0; })
 		<< " numbers " << std::endl;
-	std::cout << std::endl;
 
+	std::cout << "	6) define max and min numbers in P1" << std::endl;
+	std::cout << "Max: " << *std::max_element(P1.begin(), P1.end()) << std::endl;
+	std::cout << "Min: " << *std::min_element(P1.begin(), P1.end()) << std::endl;
 
 
 
