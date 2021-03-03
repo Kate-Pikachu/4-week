@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <random>
+#include <cmath>
 
 void show_sequence(std::vector<int> vec) {
 	for (auto const& element : vec)
@@ -47,7 +48,7 @@ int main() {
 	std::cout << std::endl;
 
 	std::cout << "	5) count odd numbers in P1" << std::endl;
-	std::cout << std::count_if(std::begin(P1), std::end(P1), [](int n) {return n % 2 != 0; })
+	std::cout << std::count_if(std::begin(P1), std::end(P1), [](auto n) {return n % 2 != 0; })
 		<< " numbers " << std::endl;
 
 	std::cout << "	6) define max and min numbers in P1" << std::endl;
@@ -61,8 +62,10 @@ int main() {
 	else 
 		std::cout << *x << " numbers" << std::endl;
 
-
-
+	std::cout << "	8) substitute numbers in P1 with their squares" << std::endl;
+	std::transform(std::begin(P1), std::end(P1), std::begin(P1), [](auto n) {return std::pow(n, 2); });
+	show_sequence(P1);
+	std::cout << std::endl;
 
 
 
