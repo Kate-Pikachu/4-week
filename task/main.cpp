@@ -121,6 +121,18 @@ int main() {
 
 
 
+	std::cout << "	13) replace negative numbers with zero  " << std::endl;
+	// there are no negative numbers, so i'm going to push them back into P3
+	P3.push_back(-3);
+	P3.push_back(-234);
+	std::cout << "Before: ";
+	show_sequence(P3);
+	std::cout << std::endl;
+	std::transform(std::begin(P3), std::end(P3), std::begin(P3), [](auto n) { if (n < 0) return 0; else return n; });
+	std::cout << "After: ";
+	show_sequence(P3);
+	std::cout << std::endl;
+
 
 	system("pause");
 	return EXIT_SUCCESS;
