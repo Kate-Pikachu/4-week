@@ -140,6 +140,13 @@ int main() {
 	std::cout << std::endl;
 
 
+	std::cout << "	15) change the order of the elements in P3  " << std::endl;
+	std::reverse(std::begin(P3), std::end(P3));
+	show_sequence(P3);
+	std::cout << std::endl;
+
+
+
 
 
 	system("pause");
