@@ -28,11 +28,13 @@ int main() {
 	show_sequence(P1);
 	std::cout << std::endl;
 
+
 	std::cout << "	2) add some numbers in P1" << std::endl;
 	P1.push_back(11);
 	P1.push_back(9);
 	show_sequence(P1);
 	std::cout << std::endl;
+
 
 	std::cout << "	3) mix elements of P1" << std::endl;
 	std::random_device rd;
@@ -41,19 +43,23 @@ int main() {
 	show_sequence(P1);
 	std::cout << std::endl;
 
+
 	std::cout << "	4) delete duplicates in P1" << std::endl;
 	std::sort(std::begin(P1), std::end(P1));
 	P1.erase(std::unique(std::begin(P1), std::end(P1)), std::end(P1));
 	show_sequence(P1);
 	std::cout << std::endl;
 
+
 	std::cout << "	5) count odd numbers in P1" << std::endl;
 	std::cout << std::count_if(std::begin(P1), std::end(P1), [](auto n) {return n % 2 != 0; })
 		<< " numbers " << std::endl;
 
+
 	std::cout << "	6) define max and min numbers in P1" << std::endl;
 	std::cout << "Max: " << *std::max_element(std::begin(P1), std::end(P1)) << std::endl;
 	std::cout << "Min: " << *std::min_element(std::begin(P1), std::end(P1)) << std::endl;
+
 
 	std::cout << "	7) define prime numbers in P1" << std::endl;
 	auto x = std::find_if(std::begin(P1), std::end(P1), [](auto n) {return isPrime(n); });
@@ -62,10 +68,25 @@ int main() {
 	else 
 		std::cout << *x << " numbers" << std::endl;
 
+
 	std::cout << "	8) substitute numbers in P1 with their squares" << std::endl;
 	std::transform(std::begin(P1), std::end(P1), std::begin(P1), [](auto n) {return std::pow(n, 2); });
 	show_sequence(P1);
 	std::cout << std::endl;
+
+
+	std::cout << "	9) create a sequence P2 consists of N elements, N - length of P1" << std::endl;
+	std::vector <int> P2;
+	std::random_device rad;
+	std::mt19937 mers(rad());
+	std::uniform_int_distribution<> un_distrib(1, 10);
+	for (auto i = 0; i < std::size(P1); ++i) {
+		P2.push_back(un_distrib(mers));
+	}
+	show_sequence(P2);
+	std::cout << std::endl;
+
+
 
 
 
