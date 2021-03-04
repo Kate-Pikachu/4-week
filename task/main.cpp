@@ -12,7 +12,7 @@ void show_sequence(std::vector<int> vec) {
 
 auto isPrime(int n) {
 	
-	if (n == 1)
+	if (n < 1)
 		return 0;
 	for (auto k = 2; k < n; ++k) {
 		if (n % k == 0)
@@ -22,7 +22,7 @@ auto isPrime(int n) {
 	}
 }
 
-int main() {
+int main(int argc, char** argv) {
 
 	std::cout << "	1) create a sequence P1" << std::endl;
 	std::vector <int> P1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -31,8 +31,11 @@ int main() {
 
 
 	std::cout << "	2) add some numbers in P1" << std::endl;
-	P1.push_back(11);
-	P1.push_back(9);
+	std::copy(
+		std::istream_iterator < int >(std::cin),
+		std::istream_iterator < int >(),
+		std::back_inserter(P1));
+
 	show_sequence(P1);
 	std::cout << std::endl;
 
