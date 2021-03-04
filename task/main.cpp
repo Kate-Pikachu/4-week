@@ -80,7 +80,7 @@ int main() {
 	std::vector <int> P2;
 	std::random_device rad;
 	std::mt19937 mers(rad());
-	std::uniform_int_distribution<> un_distrib(1, 10);
+	std::uniform_int_distribution<> un_distrib(1, 100);
 	for (auto i = 0; i < std::size(P1); ++i) {
 		P2.push_back(un_distrib(mers));
 	}
@@ -96,6 +96,27 @@ int main() {
 	std::cout << "	11) change some first elements in P2 " << std::endl;
 	std::transform(std::begin(P2), std::next(std::begin(P2), 3), std::begin(P2), [](auto n) {return 1; });
 	show_sequence(P2);
+	std::cout << std::endl;
+
+
+	std::cout << "	12) create sequence P3 with elements equal to subrtaction of P1 and P2 " << std::endl;
+	std::vector <int> P3;
+	std::sort(std::begin(P1), std::end(P1));
+	std::sort(std::begin(P2), std::end(P2));
+	std::cout << "P1: ";
+	show_sequence(P1);
+	std::cout << std::endl;
+	std::cout << "P2: ";
+	show_sequence(P2);
+	std::cout << std::endl;
+
+	std::set_difference(
+		P2.cbegin(), P2.cend(),
+		P1.cbegin(), P1.cend(),
+		std::back_inserter(P3));
+
+	std::cout << "P3: ";
+	show_sequence(P3);
 	std::cout << std::endl;
 
 
