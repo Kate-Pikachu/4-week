@@ -93,6 +93,12 @@ int main() {
 	std::cout << sum << std::endl;
 
 
+	std::cout << "	11) change some first elements in P2 " << std::endl;
+	std::transform(std::begin(P2), std::next(std::begin(P2), 3), std::begin(P2), [](auto n) {return 1; });
+	show_sequence(P2);
+	std::cout << std::endl;
+
+
 
 
 	system("pause");
