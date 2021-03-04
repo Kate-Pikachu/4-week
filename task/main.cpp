@@ -178,6 +178,31 @@ int main() {
 	std::cout << std::count_if(std::begin(P4), std::end(P4), [](auto n) {return n == 1; }) << std::endl;
 
 
+	std::cout << "	20) print all the sequences in cout  " << std::endl;
+	std::cout << "P1: ";
+	std::unique_copy(P1.cbegin(), P1.cend(),
+		std::ostream_iterator < int >(std::cout, " "));
+	std::cout << std::endl;
+
+
+	std::cout << "P2: ";
+	std::unique_copy(P2.cbegin(), P2.cend(),
+		std::ostream_iterator < int >(std::cout, " "));
+	std::cout << std::endl;
+
+
+	std::cout << "P3: ";
+	std::unique_copy(P3.cbegin(), P3.cend(),
+		std::ostream_iterator < int >(std::cout, " "));
+	std::cout << std::endl;
+
+
+	std::cout << "P4: ";
+	std::unique_copy(P4.cbegin(), P4.cend(),
+		std::ostream_iterator < int >(std::cout, " "));
+	std::cout << std::endl;
+
+
 	system("pause");
 	return EXIT_SUCCESS;
 }
