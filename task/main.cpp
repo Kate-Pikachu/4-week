@@ -164,6 +164,15 @@ int main() {
 	std::cout << std::endl;
 
 
+	std::cout << "	18) create P4 by merging P1 and P2  " << std::endl;
+	std::vector<int> P4;
+	std::merge(
+		P1.cbegin(), P1.cend(),
+		P2.cbegin(), P2.cend(),
+		std::back_inserter(P4));
+	show_sequence(P4);
+	std::cout << std::endl;
+
 
 
 	system("pause");
