@@ -153,6 +153,17 @@ int main() {
 	std::cout << std::endl;
 
 
+	std::cout << "	17) sort P1 and P2 in increasing order  " << std::endl;
+	std::sort(std::begin(P1), std::end(P1));
+	std::sort(std::begin(P2), std::end(P2));
+	std::cout << "P1: ";
+	show_sequence(P1);
+	std::cout << std::endl;
+	std::cout << "P2: ";
+	show_sequence(P2);
+	std::cout << std::endl;
+
+
 
 
 	system("pause");
