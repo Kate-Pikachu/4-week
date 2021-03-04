@@ -174,6 +174,9 @@ int main() {
 	std::cout << std::endl;
 
 
+	std::cout << "	19) define the area of ordered insertion of 1 in P4  " << std::endl;
+	std::cout << std::count_if(std::begin(P4), std::end(P4), [](auto n) {return n == 1; }) << std::endl;
+
 
 	system("pause");
 	return EXIT_SUCCESS;
