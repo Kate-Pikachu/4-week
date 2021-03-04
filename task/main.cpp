@@ -146,6 +146,12 @@ int main() {
 	std::cout << std::endl;
 
 
+	std::cout << "	16) defeine the biggest numbers in P3  " << std::endl;
+	// at previous point P3 was sorted in descending order, so we need just to print first 3 numbers
+	for (auto j = 0; j < 3; ++j) 
+		std::cout << "  " << P3[j];
+	std::cout << std::endl;
+
 
 
 
