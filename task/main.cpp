@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <random>
 #include <cmath>
+#include <numeric>
 
 void show_sequence(std::vector<int> vec) {
 	for (auto const& element : vec)
@@ -86,6 +87,10 @@ int main() {
 	show_sequence(P2);
 	std::cout << std::endl;
 
+
+	std::cout << "	10) sum of elements in P2 " << std::endl;
+	auto sum = std::accumulate(std::begin(P2), std::end(P2), 0);
+	std::cout << sum << std::endl;
 
 
 
