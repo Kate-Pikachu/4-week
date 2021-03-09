@@ -29,16 +29,21 @@ c++ <random>:
 
 3. Какими наборами возможностей обладают итераторы различных категорий?
 
-	Input Iterator:
+	Input Iterator (II):
 =, !=, ==, ++, * -> для чтения (istream_iterator)
-	Output Iterator:
+	Output Iterator (OI):
 =, !=, ==, ++, * -> для записи (ostream_iterator)
-	Forward Iterator:
+	Forward Iterator (FI) - однонаправленный итератор - может перемещаться по цепочке объектов в одном направлении:
 II, OI, многопроходность (forward_list)
-	Bidirectionnel Iterator:
-FI, —, (list, set)
-	Random Acuss Iterator:
+	Bidirectionnel Iterator (BI) - двунаправленный итератор - может перемещаться из начала в конец цепочки объектов, и наоборот:
+FI, —, (list, set, multiset, map и multimap)
+	Random Acuss Iterator - итераторы произвольного доступа:
 BI, <, >, <=, >=, +/- n, i2-i1, [n] (vector)
+	Вспомогательные итераторы - выполняют вспомогательные операции по отношению к основным;
+	Reverse iterator - реверсивные итераторы - обходят контейнер с начала до конца;
+	Insert iterator - итераторы вставки - добавляет значения к цепочке объектов
+Например, front_inserter, back_inserter или inserter. front_inserter и back_inserter не могут работать с наборами (set) и картами (map), а front_inserter к тому же не умеет добавлять данные в начало векторов (vector). Зато итератор вставки inserter добавляет объекты в любой контейнер.
+	Сonstant iterator - константный итератор не допускает изменения данных, на которые он ссылается; можно считать константный итератор указателем на константу. 
 
 4. Какая классификация предлагается для алгоритмов стандартной библиотеки?
 
